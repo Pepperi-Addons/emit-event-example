@@ -1,0 +1,4 @@
+/publish
+**/node_modules/**
+cpi-side/build
+var_sk
