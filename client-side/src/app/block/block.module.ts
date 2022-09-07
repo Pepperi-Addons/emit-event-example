@@ -9,6 +9,8 @@ import { PepAddonService } from '@pepperi-addons/ngx-lib';
 import { BlockComponent } from './index';
 
 import { config } from '../app.config';
+import { PepButtonModule } from '@pepperi-addons/ngx-lib/button';
+import { PepTextboxModule } from '@pepperi-addons/ngx-lib/textbox';
 
 export const routes: Routes = [
     {
@@ -21,6 +23,8 @@ export const routes: Routes = [
     declarations: [BlockComponent],
     imports: [
         CommonModule,
+        PepButtonModule,
+        PepTextboxModule,
         TranslateModule.forChild({
             loader: {
                 provide: TranslateLoader,

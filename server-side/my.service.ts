@@ -78,18 +78,17 @@ class MyService {
         return this.upsertRelation(blockRelation);
     }
 
-    upsertRelations() {
+    async upsertRelations() {
         // For settings block use this.
         const blockRelationSlugName = 'CHANGE_TO_SETTINGS_SLUG_NAME';
         const blockRelationGroupName = 'CHANGE_TO_SETTINGS_GROUP_NAME';
-        const blockRelationName = 'CHANGE_TO_SETTINGS_RELATION_NAME';
         const blockRelationDescription = 'CHANGE_TO_SETTINGS_DESCRIPTION';
-        this.upsertSettingsRelation(blockRelationSlugName, blockRelationGroupName, blockRelationName, blockRelationDescription);
+        // this.upsertSettingsRelation(blockRelationSlugName, blockRelationGroupName, blockRelationName, blockRelationDescription);
 
         // For page block use this.
         // // TODO: change to block name (this is the unique relation name and the description that will be on the block).
-        // const blockRelationName = 'CHANGE_TO_BLOCK_RELATION_NAME';
-        // this.upsertBlockRelation(blockRelationName, true);
+        const blockRelationName = 'emitEventExample';
+        await this.upsertBlockRelation(blockRelationName, true);
 
         // For addon block use this.
         // // TODO: change to block name (this is the unique relation name and the description that will be on the block).

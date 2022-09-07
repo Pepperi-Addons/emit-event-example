@@ -13,6 +13,8 @@ import { SettingsComponent, SettingsModule } from './settings';
 // import { BlockEditorModule, BlockEditorComponent } from './block-editor';
 
 import { config } from './app.config';
+import { BlockComponent } from './block';
+import { BlockEditorComponent } from './block-editor';
 
 @NgModule({
     declarations: [
@@ -48,10 +50,8 @@ export class AppModule implements DoBootstrap {
     }
 
     ngDoBootstrap() {
-        this.pepAddonService.defineCustomElement(`settings-element-${config.AddonUUID}`, SettingsComponent, this.injector);
-
-        // this.pepAddonService.defineCustomElement(`block-element-${config.AddonUUID}`, BlockComponent, this.injector);
-        // this.pepAddonService.defineCustomElement(`block-editor-element-${config.AddonUUID}`, BlockEditorComponent, this.injector);
+        this.pepAddonService.defineCustomElement(`block-element-${config.AddonUUID}`, BlockComponent, this.injector);
+        this.pepAddonService.defineCustomElement(`block-editor-element-${config.AddonUUID}`, BlockEditorComponent, this.injector);
     }
 }
 

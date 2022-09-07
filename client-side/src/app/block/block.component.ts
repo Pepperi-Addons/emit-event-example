@@ -14,10 +14,27 @@ export class BlockComponent implements OnInit {
     constructor(private translate: TranslateService) {
     }
 
+    randomNumber: string = "";
+
     ngOnInit(): void {
     }
 
     ngOnChanges(e: any): void {
 
+    }
+
+    buttonClick() {
+        const eventData = {
+            detail: {
+                eventKey: 'TSAButtonPressed',
+                // the data for the event
+                eventData: { },
+                completion: (data) => {
+                    this.randomNumber = data.randomNumber;
+                }
+            },
+        };
+        const event = new CustomEvent('emit-event', eventData);
+        window.dispatchEvent(event);
     }
 }

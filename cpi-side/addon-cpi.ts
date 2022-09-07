@@ -1,6 +1,11 @@
 import '@pepperi-addons/cpi-node'
 
 export async function load(configuration: any) {
-    console.log('cpi side works!');
-    // Put your cpi side code here
+    pepperi.events.intercept("TSAButtonPressed" as any, {}, async (data): Promise<any> => {
+    //pepperi.events.intercept("finish" as any, {}, async (data): Promise<any> => {
+        debugger
+        return {
+            randomNumber: Math.random() * 1000 
+        }
+    });
 }
